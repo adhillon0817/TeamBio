@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/adhillon0817/TeamBio/issues"
   },
-  "homepage": "https://github.com/adhillon0817/TeamBio#readme"
+  "homepage": "https://github.com/adhillon0817/TeamBio#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
