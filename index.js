@@ -72,7 +72,7 @@ const arr = []
             
 
     async function addManager() {
-        inquirer
+        await inquirer
             .prompt([
                 {
                     type: "input",
@@ -86,7 +86,7 @@ const arr = []
 
 
     async function addEngineer() {
-        inquirer
+       await inquirer
             .prompt([
                 {
                     type: "input",
@@ -100,7 +100,7 @@ const arr = []
 
     
     async function addIntern() {
-        inquirer
+        await inquirer
             .prompt([
                 {
                     type: "input",
