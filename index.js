@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 
 // Create an empty array list to store employee objects outside of array.
 
-
+const arr = []
 
 // Gather manager data
 
