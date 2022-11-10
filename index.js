@@ -1,5 +1,5 @@
 // require 'inquirer'
-
+const inquirer = require('inquirer');
 
 
 // Create an empty array list to store employee objects outside of array.
@@ -9,6 +9,12 @@
 // Gather manager data
 
     //inquirer.prompt()
+
+    inquirer
+        .createPromptModule([
+            type: "input", 
+            message: ""
+        ])
 
     //THEN Build a manager object
 
