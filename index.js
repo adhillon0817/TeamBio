@@ -78,7 +78,26 @@ const arr = []
                     type: "input",
                     message: "What is the team manager's name?",
                     name: "Manager",
+                }, 
+
+                {
+                    type: "input",
+                    message: "What is the manager's room number?",
+                    name: "Manager"
+                },
+
+                {
+                    type: "input",
+                    message: "What is the manager's email?",
+                    name: "Manager"
+                },
+
+                {
+                    type: "input",
+                    message: "What is the manager's id?",
+                    name: "Manager"
                 }
+
             ]);
         
         addEmployee();
@@ -92,6 +111,24 @@ const arr = []
                     type: "input",
                     message: "What is the team engineer's name?",
                     name: "Engineer",
+                },
+
+                {
+                    type: "input",
+                    message: "What is the engineer's GitHub username?",
+                    name: "Engineer"
+                },
+
+                {
+                    type: "input",
+                    message: "What is the engineer's email?",
+                    name: "Engineer"
+                },
+
+                {
+                    type: "input",
+                    message: "What is the engineer's id?",
+                    name: "Engineer"
                 }
             ]);
         
@@ -106,6 +143,24 @@ const arr = []
                     type: "input",
                     message: "What is the team intern's name?",
                     name: "Intern",
+                },
+
+                {
+                    type: "input",
+                    message: "What is the? name of the intern's school",
+                    name: "Intern"
+                },
+
+                {
+                    type: "input",
+                    message: "What is the intern's email?",
+                    name: "Intern"
+                },
+
+                {
+                    type: "input",
+                    message: "What is the intern's id?",
+                    name: "Intern"
                 }
             ]);
         
