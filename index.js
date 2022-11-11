@@ -8,7 +8,7 @@ const writeFile = utils.promisify(fs.writeFile);
 
 const arr = []
 
-
+addEmployee();
 
 //6:16 Day 1
 // Gather manager data 
