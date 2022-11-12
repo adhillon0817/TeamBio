@@ -16,11 +16,8 @@ addEmployee();
 
     //inquirer.prompt()
 
-   async function addEmployee() {
-    try {
-        const answers = await inquirer
-            inquirer
-                .prompt([
+    function addEmployee() {
+    inquirer.prompt([
                     {
                         type: "list", 
                         message: "Which type of team member would you like to add?",
@@ -44,127 +41,125 @@ addEmployee();
                             },
                         ]
                     }
-                ])
+                ]).then ((answers)=>{
+                    console.log(answers.type)
                 
-                    if(answers.type === "Manager") {
+                
+                    if(answers.type === "M") {
                         addManager();
-                    }
-
-                    if(answers.type === "Engineer") {
+                     }
+                  else if(answers.type === "E") {
                         addEngineer();
                     }
 
-                    if(answers.type === "Intern") {
+                   else if(answers.type === "I") {
                         addIntern();
                     } else {
                         try {
-                        // answers.type === "All Done Adding Employees!"
-                            await writeFile("team.html", "Team Profile");
+                            writeFile("team.html", "Team Profile");
                             console.log("Employees Added!");
                         } catch(err) {
                             console.error(err)
                         }
-                } 
-            }catch(err) {
-                console.log(err);
-            }
-        
+                }
+                })       
 }
             
 
-    async function addManager() {
-        await inquirer
-            .prompt([
+     function addManager() {
+     inquirer.prompt([
                 {
                     type: "input",
                     message: "What is the team manager's name?",
-                    name: "Manager",
+                    name: "name",
                 }, 
 
                 {
                     type: "input",
                     message: "What is the manager's room number?",
-                    name: "Manager"
+                    name: "number"
                 },
 
                 {
                     type: "input",
                     message: "What is the manager's email?",
-                    name: "Manager"
+                    name: "email"
                 },
 
                 {
                     type: "input",
                     message: "What is the manager's id?",
-                    name: "Manager"
+                    name: "id"
                 }
 
-            ]);
-        
-        addEmployee();
+            ])
+            .then((answers) => {
+                console.log(answers)
+            })
     }
 
 
-    async function addEngineer() {
-       await inquirer
-            .prompt([
+    function addEngineer() {
+      inquirer.prompt([
                 {
                     type: "input",
                     message: "What is the team engineer's name?",
-                    name: "Engineer",
+                    name: "name",
                 },
 
                 {
                     type: "input",
                     message: "What is the engineer's GitHub username?",
-                    name: "Engineer"
+                    name: "GitHub"
                 },
 
                 {
                     type: "input",
                     message: "What is the engineer's email?",
-                    name: "Engineer"
+                    name: "email"
                 },
 
                 {
                     type: "input",
                     message: "What is the engineer's id?",
-                    name: "Engineer"
+                    name: "id"
                 }
-            ]);
-        
-        addEmployee();
+            ])
+            .then((answers) => {
+                console.log(answers)
+            })
     }
 
     
-    async function addIntern() {
-        await inquirer
-            .prompt([
+    function addIntern() {
+      inquirer.prompt([
                 {
                     type: "input",
                     message: "What is the team intern's name?",
-                    name: "Intern",
+                    name: "name",
                 },
 
                 {
                     type: "input",
                     message: "What is the? name of the intern's school",
-                    name: "Intern"
+                    name: "school"
                 },
 
                 {
                     type: "input",
                     message: "What is the intern's email?",
-                    name: "Intern"
+                    name: "email"
                 },
 
                 {
                     type: "input",
                     message: "What is the intern's id?",
-                    name: "Intern"
+                    name: "id"
                 }
-            ]);
-        addEmployee();
+            ])
+            .then((answers) => {
+                console.log(answers)
+            })
     }
 
 
@@ -178,146 +173,146 @@ addEmployee();
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    function addEmployee() {
-        function addManager() {
-            managerName
-            managerRoomNumber
-            managerEmail
-            managerId
+//     function addEmployee() {
+//         function addManager() {
+//             managerName
+//             managerRoomNumber
+//             managerEmail
+//             managerId
 
-            .then(answers => {
-                const manager = new Manager(answers.managerName, answers.managerRoomNumber, answers.managerEmail, answers.managerId);
-                teamMembers.push(manager);
-                idArray.push(answers.managerId);
+//             .then(answers => {
+//                 const manager = new Manager(answers.managerName, answers.managerRoomNumber, answers.managerEmail, answers.managerId);
+//                 teamMembers.push(manager);
+//                 idArray.push(answers.managerId);
 
-                createTeam();
-            });
-        }
-    }
+//                 createTeam();
+//             });
+//         }
+//     }
 
-    function createTeam() {
-        inquirer.prompt([
-            "Which employee would you like to add next?",
-            choices: [
-                "Engineer",
-                "Intern",
-                "No more employees to add!"
-            ]
-        ]).then(userChoice => {
-            switch (userChoice.memberChoice) {
-                case "Engineer":
-                    addEngineer();
-                    break;
-                case "Intern":
-                    addIntern();
-                    break;
-            }
-        });
-    }
+//     function createTeam() {
+//         inquirer.prompt([
+//             "Which employee would you like to add next?",
+//             choices: [
+//                 "Engineer",
+//                 "Intern",
+//                 "No more employees to add!"
+//             ]
+//         ]).then(userChoice => {
+//             switch (userChoice.memberChoice) {
+//                 case "Engineer":
+//                     addEngineer();
+//                     break;
+//                 case "Intern":
+//                     addIntern();
+//                     break;
+//             }
+//         });
+//     }
 
-    function addEmployee()
-    function addEngineer() {
-        engineerName
-        engineerGitHub
-        engineerEmail
-        engineerId
+//     function addEmployee()
+//     function addEngineer() {
+//         engineerName
+//         engineerGitHub
+//         engineerEmail
+//         engineerId
 
-        .then(answers => {
-            const engineer = new engineer(answers.engineerName, answers.engineerGitHub, answers.engineerEmail, answers.engineerId);
-            teamMembers.push(engineer);
-            idArray.push(answers.engineerId);
+//         .then(answers => {
+//             const engineer = new engineer(answers.engineerName, answers.engineerGitHub, answers.engineerEmail, answers.engineerId);
+//             teamMembers.push(engineer);
+//             idArray.push(answers.engineerId);
 
-            createTeam();
-        });
-    }
+//             createTeam();
+//         });
+//     }
 
-    function createTeam() {
-        inquirer.prompt([
-            "Which employee would you like to add next?"
-            choices: [
-                "Manager",
-                "Intern",
-                "No more employees to add!"
-            ]
-        ]).then(userChoice => {
-            switch (userChoice.memberChoice) {
-                case "Manager":
-                    addManager();
-                    break;
-                case "Intern":
-                    addIntern();
-                    break;
-            }
-        });
-    }
+//     function createTeam() {
+//         inquirer.prompt([
+//             "Which employee would you like to add next?"
+//             choices: [
+//                 "Manager",
+//                 "Intern",
+//                 "No more employees to add!"
+//             ]
+//         ]).then(userChoice => {
+//             switch (userChoice.memberChoice) {
+//                 case "Manager":
+//                     addManager();
+//                     break;
+//                 case "Intern":
+//                     addIntern();
+//                     break;
+//             }
+//         });
+//     }
 
-    function addEmployee()
-    function addIntern() {
-        internName
-        internGitHub
-        internEmail
-        internId
+//     function addEmployee()
+//     function addIntern() {
+//         internName
+//         internGitHub
+//         internEmail
+//         internId
 
-        .then(answers => {
-            const intern = new intern(answers.internName, answers.internGitHub, answers.internEmail, answers.internId);
-            teamMembers.push(intern);
-            idArray.push(answers.internId);
+//         .then(answers => {
+//             const intern = new intern(answers.internName, answers.internGitHub, answers.internEmail, answers.internId);
+//             teamMembers.push(intern);
+//             idArray.push(answers.internId);
 
-            createTeam();
-        });
-    }
+//             createTeam();
+//         });
+//     }
 
-    function createTeam() {
-        inquirer.prompt([
-            "Which employee would you like to add next?",
-            choices: [
-                "Manager",
-                "Engineer",
-                "No more employees to add!"
-            ]
-        ]).then(userChoice => {
-            switch (userChoice.memberChoice) {
-                case "Manager":
-                    addManager();
-                    break;
-                case "Engineer":
-                    addEngineer();
-                    break;
-            }
-        });
-    }
+//     function createTeam() {
+//         inquirer.prompt([
+//             "Which employee would you like to add next?",
+//             choices: [
+//                 "Manager",
+//                 "Engineer",
+//                 "No more employees to add!"
+//             ]
+//         ]).then(userChoice => {
+//             switch (userChoice.memberChoice) {
+//                 case "Manager":
+//                     addManager();
+//                     break;
+//                 case "Engineer":
+//                     addEngineer();
+//                     break;
+//             }
+//         });
+//     }
     
    
 
-// Gather Engineer data
+// // Gather Engineer data
 
-    //inquirer.prompt()
+//     //inquirer.prompt()
 
-    //THEN Build a Engineer object
-
-
-
-// Gather Intern data
-
-    //inquirer.prompt()
-
-    //THEN Build a Engineer object
+//     //THEN Build a Engineer object
 
 
 
-// Ask for which team member they want to add or are they done?
+// // Gather Intern data
 
-        //inquirer.prompt()
+//     //inquirer.prompt()
 
-        // THEN decide which function to call (done, engineer, etc.)
+//     //THEN Build a Engineer object
+
+
+
+// // Ask for which team member they want to add or are they done?
+
+//         //inquirer.prompt()
+
+//         // THEN decide which function to call (done, engineer, etc.)
 
 
     
-// Generate the HTML 
+// // Generate the HTML 
 
 
 
-// Write the html file
+// // Write the html file
 
 
 
