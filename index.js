@@ -167,9 +167,19 @@ addEmployee();
         addEmployee();
     }
 
+
+
+
+
+
+
+
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function addEmployee() {
-        function createManager() {
+        function addManager() {
             managerName
             managerRoomNumber
             managerEmail
@@ -185,13 +195,99 @@ addEmployee();
         }
     }
 
+    function createTeam() {
+        inquirer.prompt([
+            "Which employee would you like to add next?",
+            choices: [
+                "Engineer",
+                "Intern",
+                "No more employees to add!"
+            ]
+        ]).then(userChoice => {
+            switch (userChoice.memberChoice) {
+                case "Engineer":
+                    addEngineer();
+                    break;
+                case "Intern":
+                    addIntern();
+                    break;
+            }
+        });
+    }
+
+    function addEmployee()
+    function addEngineer() {
+        engineerName
+        engineerGitHub
+        engineerEmail
+        engineerId
+
+        .then(answers => {
+            const engineer = new engineer(answers.engineerName, answers.engineerGitHub, answers.engineerEmail, answers.engineerId);
+            teamMembers.push(engineer);
+            idArray.push(answers.engineerId);
+
+            createTeam();
+        });
+    }
+
+    function createTeam() {
+        inquirer.prompt([
+            "Which employee would you like to add next?"
+            choices: [
+                "Manager",
+                "Intern",
+                "No more employees to add!"
+            ]
+        ]).then(userChoice => {
+            switch (userChoice.memberChoice) {
+                case "Manager":
+                    addManager();
+                    break;
+                case "Intern":
+                    addIntern();
+                    break;
+            }
+        });
+    }
+
+    function addEmployee()
+    function addIntern() {
+        internName
+        internGitHub
+        internEmail
+        internId
+
+        .then(answers => {
+            const intern = new intern(answers.internName, answers.internGitHub, answers.internEmail, answers.internId);
+            teamMembers.push(intern);
+            idArray.push(answers.internId);
+
+            createTeam();
+        });
+    }
+
+    function createTeam() {
+        inquirer.prompt([
+            "Which employee would you like to add next?",
+            choices: [
+                "Manager",
+                "Engineer",
+                "No more employees to add!"
+            ]
+        ]).then(userChoice => {
+            switch (userChoice.memberChoice) {
+                case "Manager":
+                    addManager();
+                    break;
+                case "Engineer":
+                    addEngineer();
+                    break;
+            }
+        });
+    }
     
-    .then(answers => {
-                const intern = new Intern(answers.internName, answer.internSchool, answer.internEmail, answer.internId);
-                teamMembers.push(intern);
-                isTypedArray.push(answers.internId) ;
-            
-            })
+   
 
 // Gather Engineer data
 
