@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require("fs");
 const utils = require("util");
+const { isTypedArray } = require('util/types');
 
 const writeFile = utils.promisify(fs.writeFile);
 // Create an empty array list to store employee objects outside of array.
@@ -163,10 +164,34 @@ addEmployee();
                     name: "Intern"
                 }
             ]);
-        
         addEmployee();
     }
-   
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    function addEmployee() {
+        function createManager() {
+            managerName
+            managerRoomNumber
+            managerEmail
+            managerId
+
+            .then(answers => {
+                const manager = new Manager(answers.managerName, answers.managerRoomNumber, answers.managerEmail, answers.managerId);
+                teamMembers.push(manager);
+                idArray.push(answers.managerId);
+
+                createTeam();
+            });
+        }
+    }
+
+    
+    .then(answers => {
+                const intern = new Intern(answers.internName, answer.internSchool, answer.internEmail, answer.internId);
+                teamMembers.push(intern);
+                isTypedArray.push(answers.internId) ;
+            
+            })
 
 // Gather Engineer data
 
