@@ -1,5 +1,4 @@
 const Engineer = require('../lib/Engineer');
-const newEngineer = require('../lib/Engineer');
 
 test('employee as engineer',() => {
     const newEngineer = new Engineer('Avleen', 17, 'avleendhillon@gmail.com', 'adhillon0817');
@@ -12,6 +11,6 @@ test('get GitHub', () => {
 });
 
 test('employee role', () => {
-    const newEngineer = new Engineer('Avleen', 17, 'avleendhillon@gmail.com');
+    const newEngineer = new Engineer('Avleen', 17, 'avleendhillon@gmail.com', 'adhillon0817');
     expect(newEngineer.getRole()).toEqual("Engineer")
 });
