@@ -1,6 +1,6 @@
 const Employee = require('.../lib/Employee.js');
 
-describe("Employee", () => {
+test("Employee", () => {
     it("can create employee", () => {
         const newEmployee = new Employee('Avleen', 17, 'avleendhillon@gmail.com');
 
