@@ -1,18 +1,54 @@
 const createEngineer = function(engineer) {
     return `
-    
-    `
+    <div class="col-4 mt-4">
+                    <div class="card h-100">
+                        <div class="card-title">
+                            <h2>${engineer.name}</h2>
+                            <h3>Engineer</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="id">id: 17</p>
+                            <p class="email">email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+                            <p class="gitHub">gitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+                        </div>
+                    </div>
+                </div>
+    `;
 }
 
 const createIntern = function(intern) {
     return `
-    
+    <div class="col-4 mt-4">
+                    <div class="card h-100">
+                        <div class="card-title">
+                            <h2>${intern.name}</h2>
+                            <h3>Intern</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="id">id: 21</p>
+                            <p class="email">email: <a href="mailto:${intern.email}">${intern.email}</a></p>
+                            <p class="school">School: ${intern.school}</p>
+                        </div>
+                    </div>
+                </div>
     `
 }
 
 const createManager = function(manager) {
     return `
-    
+    <div class="col-4 mt-4">
+                    <div class="card h-100">
+                        <div class="card-title">
+                            <h2>${manager.name}</h2>
+                            <h3>Manager</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="id">id: ${manager.id}</p>
+                            <p class="email">email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                            <p class="officeNumber">Office: ${manager.officeNumber}</p>
+                        </div>
+                    </div>
+                </div>
     `
 }
 const teamCards = pageArray.join('')
