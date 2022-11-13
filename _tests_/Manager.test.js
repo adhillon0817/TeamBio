@@ -7,5 +7,5 @@
 
 test('employee role', () => {
     const newManager = new Manager('Avleen', 17, 'avleendhillon@gmail.com', 25);
-    expect(newEngineer.getRole()).toEqual("Manager");
+    expect(newManager.getRole()).toEqual("Manager");
 });
