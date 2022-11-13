@@ -9,4 +9,23 @@ describe("Employee", () => {
         expect(newEmployee.email).toEqual(expect.any(Number));
     });
 
-})
+    test('employee name',() => {
+        const newEmployee = new Employee('Avleen', 17, 'avleendhillon@gmail.com');
+        expect(newEmployee.getName()).toEqual(expect.any(String));
+    });
+
+    test('employee id',() => {
+        const newEmployee = new Employee('Avleen', 17, 'avleendhillon@gmail.com');
+        expect(newEmployee.getid()).toEqual(expect.any(Number));
+    });
+
+    test('employee name',() => {
+        const newEmployee = new Employee('Avleen', 17, 'avleendhillon@gmail.com');
+        expect(newEmployee.getEmail()).toEqual(expect.StringContaining(employee.email.toString()));
+    });
+
+    test('employee role', () => {
+        const newEmployee = new Employee('Avleen', 17, 'avleendhillon@gmail.com');
+        expect(newEmployee.getRole()).toEqual("employee")
+    });
+});
