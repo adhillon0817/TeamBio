@@ -1,4 +1,25 @@
-const generateTeamProfile = function (employeeCard) {
+const createEngineer = function(engineer) {
+    return `
+    
+    `
+}
+
+const createIntern = function(intern) {
+    return `
+    
+    `
+}
+
+const createManager = function(manager) {
+    return `
+    
+    `
+}
+const teamCards = pageArray.join('')
+const createTeam = generateTeamProfile(teamCards);
+return createTeam;
+
+const generateTeamProfile = function (teamCards) {
     return `
 <!DOCTYPE html>
   <html lang="en">
@@ -21,6 +42,7 @@ const generateTeamProfile = function (employeeCard) {
     <main>
         <div class="container">
             <div class = "row justify-center align-center" id="position-card">
+            ${teamCards}
             </div>
         </div>
     </main>
