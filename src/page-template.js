@@ -7,7 +7,7 @@ const createEngineer = function(engineer) {
                             <h3>Engineer</h3>
                         </div>
                         <div class="card-body">
-                            <p class="id">id: 17</p>
+                            <p class="id">${engineer.id}</p>
                             <p class="email">email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
                             <p class="gitHub">gitHub: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
                         </div>
@@ -25,7 +25,7 @@ const createIntern = function(intern) {
                             <h3>Intern</h3>
                         </div>
                         <div class="card-body">
-                            <p class="id">id: 21</p>
+                            <p class="id">id:${intern.id}</p>
                             <p class="email">email: <a href="mailto:${intern.email}">${intern.email}</a></p>
                             <p class="school">School: ${intern.school}</p>
                         </div>
@@ -51,6 +51,15 @@ const createManager = function(manager) {
                 </div>
     `
 }
+
+
+
+
+
+
+
+
+
 const teamCards = pageArray.join('')
 const createTeam = generateTeamProfile(teamCards);
 return createTeam;
@@ -58,23 +67,25 @@ return createTeam;
 const generateTeamProfile = function (teamCards) {
     return `
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv=""X-UA-Compatible" content="ie=edge" />
-        <title>Team Profile</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="../dist/style.css">
-    </head>
-    
-    <body>
-      <header>
-          <h1 class="h1">
-              <section class="navbar-brand mb-0 h1 w-100 text-center">My Team</section>
-          </h1>
-      </header>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv=""X-UA-Compatible" content="ie=edge" />
+      <title>Team Profile</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+  </head>
   
+  <body>
+    <header>
+        <nav class="navbar" style="background-color: #3B71CA;">
+            <div class="container-fluid">
+            <section class="navbar-brand mb-0 h1 w-100 text-center">My Team</section>
+        </div>
+        </nav>
+    </header>
       <main>
           <div class="container">
               <div class = "row justify-center align-center" id="position-card">
@@ -86,4 +97,4 @@ const generateTeamProfile = function (teamCards) {
   `;
 }
 
-module.exports = generateHTML;
+module.exports = pageTemplate;
