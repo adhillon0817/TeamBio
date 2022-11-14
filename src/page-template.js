@@ -60,16 +60,22 @@ pageTemplate = (data) =>{
         const role = employee.getRole();
 
 
+        if (role === 'Engineer') {
+            const cardEngineer = generateEngineer(emoloyee)
+            pageArray.push(cardEngineer);
+        }
+
+        if (role === 'Intern') {
+            const cardIntern = generateIntern(emoloyee)
+            pageArray.push(cardIntern);
+        }
+
         if (role === 'Manager') {
             const cardManager = generateManager(emoloyee)
             pageArray.push(cardManager);
         }
     }
 }
-
-
-
-
 
 
 const teamCards = pageArray.join('')
