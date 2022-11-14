@@ -58,6 +58,12 @@ pageTemplate = (data) =>{
     for(let i=0; i<data.length; i++){
         const employee = data[i];
         const role = employee.getRole();
+
+
+        if (role === 'Manager') {
+            const cardManager = generateManager(emoloyee)
+            pageArray.push(cardManager);
+        }
     }
 }
 
