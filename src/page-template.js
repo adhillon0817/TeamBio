@@ -51,7 +51,7 @@ const generateEngineer = function (engineer) {
                   </div>
       `;
   };
-  
+
   const generateTeamProfile = function (teamCards) {
     return `
         <!DOCTYPE html>
@@ -84,6 +84,7 @@ const generateEngineer = function (engineer) {
         </body>
       `;
   };
+
   
   const pageTemplate = (data) => {
     let pageArray = [];
