@@ -18,9 +18,10 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 
 https://drive.google.com/file/d/1hPDm9Q3aO05B5d3dKa_S_ZUF_lvfJD3u/view
 
-
+## Future Development
+As the data is returned in the terminal, it should be able to populate on the html as well. All prompts are returned otherwise.
 
 
 ---
 ## Author 
-Avleen Kaur Dhillon 
+Avleen Kaur Dhillon  https://github.com/adhillon0817
