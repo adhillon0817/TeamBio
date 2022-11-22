@@ -66,15 +66,15 @@ const generateEngineer = function (engineer) {
   
     //creating engineer
 
-    pageArray.push(data.filter(employee => employee.getRole() === "Engineer").map(employee => generateEngineer(engineer)).join(""));
+    pageArray.push(data.filter(employee => employee.getRole() === "Engineer").map(engineer => generateEngineer(engineer)).join(""));
 
     //creating intern
-    pageArray.push(data.filter(employee => employee.getRole() === "Intern").map(employee => generateIntern(intern)).join(""));
+    pageArray.push(data.filter(employee => employee.getRole() === "Intern").map(intern => generateIntern(intern)).join(""));
 
     //creating manager
-    pageArray.push(data.filter(employee => employee.getRole() === "Manager").map(employee => generateManager(manager)));
+    pageArray.push(data.filter(employee => employee.getRole() === "Manager").map(manager => generateManager(manager)));
 
-retun(pageArray.join(""));
+return(pageArray.join(""));
 
 };
 

@@ -1,13 +1,17 @@
 // require 'inquirer'
 const inquirer = require('inquirer');
 const fs = require("fs");
+const path = require("path");
 const utils = require("util");
 const { isTypedArray } = require('util/types');
-
+const render = require('./src/page-template');
+const Manager = require('./lib/Manager');
+const dist = path.resolve(__dirname, "dist");
+const dpath = path.join(dist,"team.html");
 const writeFile = utils.promisify(fs.writeFile);
 // Create an empty array list to store employee objects outside of array.
 
-const arr = []
+const teamMembers = []
 
 addEmployee();
 
@@ -42,8 +46,8 @@ addEmployee();
                         ]
                     }
                 ]).then ((answers)=>{
-                    console.log(answers.type)
-                
+                    // console.log(answers.type)
+                                    
                 
                     if(answers.type === "M") {
                         addManager();
@@ -56,10 +60,9 @@ addEmployee();
                         addIntern();
                     } else {
                         try {
-                            writeFile("team.html", "Team Profile");
-                            console.log("Employees Added!");
+                           buildTeam()
                         } catch(err) {
-                            console.error(err)
+                            // console.error(err)
                         }
                 }
                 })       
@@ -93,10 +96,16 @@ addEmployee();
                 }
 
             ])
+            
             .then((answers) => {
-                console.log(answers)
+
+                const manager = new Manager(answers.name, answers.number, answers.email, answers.id)
+                teamMembers.push(manager)
+                buildTeam();
             })
     }
+
+
 
 
     function addEngineer() {
@@ -126,7 +135,7 @@ addEmployee();
                 }
             ])
             .then((answers) => {
-                console.log(answers)
+                // console.log(answers)
             })
     }
 
@@ -158,6 +167,12 @@ addEmployee();
                 }
             ])
             .then((answers) => {
-                console.log(answers)
+                // console.log(answers)
             })
+    }
+
+    function buildTeam(){
+        if (!fs.existsSync(dist)){
+            fs.existsSync(dist)
+        }fs.writeFileSync(dpath, render(teamMembers),'utf-8')
     }
