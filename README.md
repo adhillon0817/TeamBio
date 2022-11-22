@@ -12,11 +12,21 @@ jest
 
 ## Mock-Up
 
+Once your terminal is open, complete the following steps:
+
+1. npm i
+
+2. npm run test 
+
+3. npm run start
+
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 ![Picture of build](Assets\TeamBio.png)
 
 
-https://drive.google.com/file/d/1hPDm9Q3aO05B5d3dKa_S_ZUF_lvfJD3u/view
+![This video will show you all the tests passing and the application running](https://drive.google.com/file/d/1UBi4l2D4z5Rsnw1qoFynNBMblaf_6YHi/view)
+
+![A link to the repository!](https://github.com/adhillon0817/TeamBio.git)
 
 ## Future Development
 As the data is returned in the terminal, it should be able to populate on the html as well. All prompts are returned otherwise.
@@ -25,3 +35,5 @@ As the data is returned in the terminal, it should be able to populate on the ht
 ---
 ## Author 
 Avleen Kaur Dhillon  https://github.com/adhillon0817
+
+

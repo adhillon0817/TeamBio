@@ -6,6 +6,8 @@ const utils = require("util");
 const { isTypedArray } = require('util/types');
 const render = require('./src/page-template');
 const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer')
+const Intern = require('./lib/Intern')
 const dist = path.resolve(__dirname, "dist");
 const dpath = path.join(dist,"team.html");
 const writeFile = utils.promisify(fs.writeFile);
@@ -135,7 +137,10 @@ addEmployee();
                 }
             ])
             .then((answers) => {
-                // console.log(answers)
+
+                const engineer = new Engineer(answers.name, answers.GitHub, answers.email, answers.id)
+                teamMembers.push(engineer)
+                buildTeam();
             })
     }
 
@@ -167,7 +172,10 @@ addEmployee();
                 }
             ])
             .then((answers) => {
-                // console.log(answers)
+
+                const intern = new Intern(answers.name, answers.school, answers.email, answers.id)
+                teamMembers.push(intern)
+                buildTeam();
             })
     }
 
