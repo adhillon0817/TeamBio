@@ -1,8 +1,13 @@
  const Manager = require('../lib/Manager');
 
- test('employee as manager',() => {
+ test('Set office number',() => {
     const newManager = new Manager('Avleen', 17, 'avleendhillon@gmail.com', 25);
-    expect(newManager.roomNumber).toEqual(expect.any(Number));
+    expect(newManager.officeNumber).toEqual(expect.any(Number));
+});
+
+test('Get office number', () => {
+    const newManager = new Manager('Avleen', 17, 'avleendhillon@gmail.com', 25);
+    expect(newManager.getOfficeNumber()).toEqual(expect.any(Number));
 });
 
 test('employee role', () => {
