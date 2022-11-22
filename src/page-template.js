@@ -1,3 +1,5 @@
+const pageTemplate = (data) => {
+
 const generateEngineer = function (engineer) {
     return `
       <div class="col-4 mt-4">
@@ -86,31 +88,19 @@ const generateEngineer = function (engineer) {
   };
 
   
-  const pageTemplate = (data) => {
+ 
     let pageArray = [];
-    for (let i = 0; i < data.length; i++) {
-      const employee = data[i];
-      const role = employee.getRole();
   
-      if (role === "Engineer") {
-        const cardEngineer = generateEngineer(employee);
-        pageArray.push(cardEngineer);
-      }
-  
-      if (role === "Intern") {
-        const cardIntern = generateIntern(employee);
-        pageArray.push(cardIntern);
-      }
-  
-      if (role === "Manager") {
-        const cardManager = generateManager(employee);
-        pageArray.push(cardManager);
-      }
-      const teamCards = pageArray.join("");
-      const createTeam = generateTeamProfile(teamCards);
-      return createTeam;
-    }
-  };
-  
+    //creating engineer
+
+    pageArray.push(data.filter(employee => employee.getRole() === "Engineer").map(employee => generateEngineer(engineer)).join(""));
+
+    //creating intern
+    pageArray.push(data.filter(employee => employee.getRole() === "Intern").map(employee => generateIntern(intern)).join(""));
+
+    //creating manager
+    pageArray.push(data.filter(employee => employee.getRole() === "Manager").map(employee => generateManager(manager)));
+
+
+}
   module.exports = pageTemplate;
-  
